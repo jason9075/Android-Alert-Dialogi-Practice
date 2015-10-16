@@ -42,52 +42,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.alertdialog1:
-                new AlertDialog.Builder(MainActivity.this)
-                        .setTitle("付款方式")
-                        .setMessage("請問要使用下列何種付款方式？")
-                        .setPositiveButton("信用卡", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(getApplicationContext(), "你選了 信用卡", Toast.LENGTH_SHORT).show();
-                            }
-                        })
-                        .setNegativeButton("ATM", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(getApplicationContext(), "你選了 ATM", Toast.LENGTH_SHORT).show();
-                            }
-                        })
-                        .setNeutralButton("超商繳費", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(getApplicationContext(), "你選了 超商繳費", Toast.LENGTH_SHORT).show();
-                            }
-                        })
-                        .show();
+                DialogFactory.createDialog(this,"A");
                 break;
             case R.id.alertdialog2:
-                final String[] lunch = {
-                        "一次付完", "分12個月", "分9個月", "分6個月", "分3個月"
-                };
-                new AlertDialog.Builder(MainActivity.this)
-                        .setItems(lunch, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(getApplicationContext(), "你選了" + lunch[which], Toast.LENGTH_SHORT).show();
-                            }
-                        })
-                        .show();
+                DialogFactory.createDialog(this,"B");
                 break;
             case R.id.alertdialog3:
-                new AlertDialog.Builder(MainActivity.this)
-                        .setTitle("無法連線伺服器")
-                        .setPositiveButton("好吧！", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(getApplicationContext(), "網路連線不穩定", Toast.LENGTH_SHORT).show();
-                            }
-                        })
-                        .show();
+                DialogFactory.createDialog(this,"C");
                 break;
         }
     }
