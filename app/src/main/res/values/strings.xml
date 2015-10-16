@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Android Factory Pattern Example</string>
+    <string name="action_settings">Settings</string>
+</resources>
