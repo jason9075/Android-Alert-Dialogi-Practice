@@ -6,11 +6,7 @@ import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.widget.Toast;
 
-public class DialogForClassB implements MyDialog {
-
-    public DialogForClassB () {
-
-    }
+public class DialogForClassB extends MyDialog {
 
     public Dialog buildDialog(final Context context) {
         final String[] lunch = {
